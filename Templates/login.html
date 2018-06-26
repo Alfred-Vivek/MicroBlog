@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+</head>
+<div >
+  <div align="center">
+    <div >
+      <h1> Enter credentials </h1>
+    </div>
+    {%if error!=""%}<div id="login-alert" class="alert alert-danger col-sm-12">{{error}}</div>{%endif%}
+    <form method = "POST" enctype='multipart/form-data' action='/check'>
+      <input type="text" name="username" placeholder="username"/>
+      <p></p>
+      <input type="password" name="password" placeholder="password"/>
+      <p></p>
+          <input type="submit" value="login">
+    </form>
+  </div>
+</div>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome to MicroBlog</title>
+</head>
+<body>
+	<div align="center">
+		<h1> Microblog </h1>
+	</div>
+
+	<div align="right">
+		<form method = "GET" enctype='multipart/form-data' action='/check'>
+	      <p></p>
+	          <input type="submit" value="logout">
+	    </form>
+	</div>
+
+
+	<div>
+	</div>
+	<form method='POST' enctype='multipart/form-data' action='/show_entries'>
+		<p><b>Title</b>: <input name="message_Title" type="text" ></p>
+		<p><b>Text area: </b> <br></br> <textarea rows="4" cols="50" name="message_Text area"></textarea></p>
+		<input type="submit" value="Post">
+	</form>
+
+	<div>
+		<h2> Blog posts :</h2>
+	<div>
+		{% for key in entries %}
+		<p>
+			<b>Title: </b>{{ key.Title }} <br></br>
+			<b>Message: </b>{{key.Message}}<br></br>
+			<b>Time: </b>{{key.time_stamp}}<br></br>
+			<hr>
+		</p>
+		{% endfor %}
+	</div>
+</body>
+</html>
